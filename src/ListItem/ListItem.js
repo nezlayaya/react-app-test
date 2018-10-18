@@ -12,7 +12,9 @@ class ListItem extends Component {
     render() {
         return (
             <div className="list-wrapper">
-                gtrgtr
+                <aside>
+                    <div className='circle'>+</div>
+                </aside>
             </div>
         );
     }

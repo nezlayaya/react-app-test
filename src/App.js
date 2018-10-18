@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
-import  ListItem from './ListItem/ListItem'
+import  ListItem from './ListItem/ListItem';
+import Header from './Header/Header'
+import './App.css';
 class App extends Component {
     constructor(props){
         super(props);
         this.state={
             email:'',
             password: '',
-            showRegister: true
+            showRegister: false,
+            isLogin: false
         };
     }
 
@@ -19,13 +22,22 @@ class App extends Component {
         });
     };
 
+    ShowRegisterForm = (showFormRegistration)=>{
+        this.setState({
+            showRegister: showFormRegistration
+        })
+    };
+
+
   render() {
     return (
       <div className="App">
+          <Header ShowRegister={this.ShowRegisterForm}/>
           { this.state.showRegister === true ?
               <RegistrationForm SubmitButton={this.handleSubmit}/>
-              : <ListItem />
+              : ''
           }
+          <ListItem/>
       </div>
     );
   }

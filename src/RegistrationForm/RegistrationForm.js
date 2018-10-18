@@ -18,11 +18,11 @@ class RegistrationForm extends Component {
         let email = this.state.email;
         let pass = this.state.password;
         let showRegister = this.state.showRegister;
-        if(this.state.email === 'test@gmail.com' && this.state.password === '12345'){
+        // if(this.state.email === 'test@gmail.com' && this.state.password === '12345'){
             this.setState({
-                showRegister: false
-            })
-        }
+                showRegister: true
+            });
+        // }
         this.props.SubmitButton(email,pass, showRegister);
     }
 
@@ -40,18 +40,24 @@ class RegistrationForm extends Component {
 
     render() {
         return (
-            <div className="Registration-wrapper">
-                <form className="form-container" onSubmit={this.handleSubmit}>
-                    <input type="email"
-                           placeholder='Email'
-                           value={this.state.email}
-                           onChange={this.handleEmailChange}
-                    />
-                    <input type="password"
-                           placeholder='Password'
-                           value={this.state.password}
-                           onChange={this.passwordChange}
-                    />
+            <div className="registration-wrapper">
+                <form className="form-container w3-container" onSubmit={this.handleSubmit}>
+                    <div>
+                        <label className="w3-text-teal"><b>Email</b></label>
+                        <input type="text"
+                               className='w3-input w3-border w3-light-grey'
+                               value={this.state.email}
+                               onChange={this.handleEmailChange}
+                        />
+                    </div>
+                    <div>
+                        <label className="w3-text-teal"><b>Password</b></label>
+                        <input type="password"
+                               className="w3-input w3-border w3-light-grey"
+                               value={this.state.password}
+                               onChange={this.passwordChange}
+                        />
+                    </div>
                     <button>Submit</button>
                 </form>
             </div>
