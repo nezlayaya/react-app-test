@@ -6,22 +6,20 @@ class RegistrationForm extends Component {
         this.state={
             email: '',
             password: '',
-            showRegister: ''
+            showRegister: false,
+            isUserLogin: true
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.passwordChange = this.passwordChange.bind(this);
     }
 
-    handleSubmit(event){
-        event.preventDefault();
+    handleSubmit(){
         let email = this.state.email;
         let pass = this.state.password;
         let showRegister = this.state.showRegister;
-            this.setState({
-                showRegister: true
-            });
-        this.props.SubmitButton(email,pass, showRegister);
+        let isUserLogin = this.state.isUserLogin;
+        this.props.SubmitButton(email,pass, showRegister, isUserLogin);
     }
 
     handleEmailChange(event){

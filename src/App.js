@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RegistrationForm from './RegistrationForm/RegistrationForm';
-import  ListItem from './ListItem/ListItem';
 import Header from './Header/Header'
+import Lists from './Lists/Lists'
 import './App.css';
 class App extends Component {
     constructor(props){
@@ -10,22 +10,28 @@ class App extends Component {
             email:'',
             password: '',
             showRegister: false,
-            isLogin: false
+            isUserLogin: false
         };
     }
 
-    handleSubmit = (emailValue, passValue, showRegister) => {
+    handleSubmit = (emailValue, passValue, showRegister,isUserLogin) => {
         this.setState({
             email: emailValue,
             password: passValue,
-            showRegister: showRegister
+            showRegister: showRegister,
+            isUserLogin: isUserLogin
         });
+        console.log(this);
     };
 
     ShowRegisterForm = (showFormRegistration)=>{
         this.setState({
             showRegister: showFormRegistration
         })
+    };
+
+    updateData = (value) => {
+        this.setState({ name: value })
     };
 
 
@@ -37,7 +43,7 @@ class App extends Component {
               <RegistrationForm SubmitButton={this.handleSubmit}/>
               : ''
           }
-          <ListItem/>
+          <Lists updateData={this.updateData}/>
       </div>
     );
   }

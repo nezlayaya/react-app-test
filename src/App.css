@@ -2,3 +2,37 @@
   margin: 20px;
   float: right;
 }
+
+.lists-wrapper{
+  display: flex;
+}
+
+.item-wrapper{
+  padding: 20px;
+  background-color: gainsboro;
+  margin: 20px;
+  text-align: center;
+}
+
+.right-side-lists{
+  display: flex;
+  flex-direction: column;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+ul li{
+  margin: 150px 0;
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}

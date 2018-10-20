@@ -1,27 +1,39 @@
 {
-  "title1": {
+  "items" :[
+   {
+     "number": 1,
     "title": "title",
-    "img": "https://placeimg.com/640/480/arch",
-    "hiddenInformation": "hidden information is visible"
+    "img": "https://dummyimage.com/200x200/000/fff",
+    "hiddenInformation": "hidden information is visible",
+     "imgDescription": "image description"
   },
-  "title2": {
-    "title": "title",
-    "img": "https://placeimg.com/640/480/arch",
-    "hiddenInformation": "hidden information is visible"
-  },
-  "title3": {
+   {
+     "number": 2,
+     "title": "title",
+    "img": "https://dummyimage.com/200x200/000/fff",
+    "hiddenInformation": "hidden information is visible",
+     "imgDescription": "image description"
+   },
+  {
+    "number": 3,
     "title": " title",
-    "img": "https://placeimg.com/640/480/arch",
-    "hiddenInformation": "hidden information is visible"
+    "img": "https://dummyimage.com/200x200/000/fff",
+    "hiddenInformation": "hidden information is visible",
+    "imgDescription": "image description"
   },
-  "title4": {
-    "title": "title",
-    "img": "https://placeimg.com/640/480/arch",
-    "hiddenInformation": "hidden information is visible"
-  },
-  "title5": {
-    "title": "title",
-    "img": "https://placeimg.com/640/480/arch",
-    "hiddenInformation": "hidden information is visible"
-  }
+   {
+     "number": 4,
+     "title": "title",
+    "img": "https://dummyimage.com/200x200/000/fff",
+    "hiddenInformation": "hidden information is visible",
+     "imgDescription": "image description"
+   },
+   {
+     "number": 5,
+     "title": "title",
+    "img": "https://dummyimage.com/200x200/000/fff",
+    "hiddenInformation": "hidden information is visible",
+     "imgDescription": "image description"
+   }
+]
 }
