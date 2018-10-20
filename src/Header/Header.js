@@ -4,18 +4,14 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.state={
-            isToggleOn: false,
+            isToggleOn: true,
             loginUser: false
         };
         this.ShowRegisterForm = this.ShowRegisterForm.bind(this);
     }
 
     ShowRegisterForm(){
-        let showFormRegistration = this.state.isToggleOn;
-        this.setState({
-            isToggleOn: true
-        });
-        this.props.ShowRegister(showFormRegistration);
+        this.props.ShowRegister(this.state.isToggleOn);
     }
 
     render() {

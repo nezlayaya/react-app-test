@@ -18,11 +18,9 @@ class RegistrationForm extends Component {
         let email = this.state.email;
         let pass = this.state.password;
         let showRegister = this.state.showRegister;
-        // if(this.state.email === 'test@gmail.com' && this.state.password === '12345'){
             this.setState({
                 showRegister: true
             });
-        // }
         this.props.SubmitButton(email,pass, showRegister);
     }
 
