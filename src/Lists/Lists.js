@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import  ListJson from '../list.json';
-import ListItem from '../ListItem/ListItem'
 class Lists extends Component {
     constructor(props){
         super(props);
@@ -8,25 +7,18 @@ class Lists extends Component {
             error: null,
             isLoaded: false,
             items: ListJson.items,
-            liVal: ''
         };
-    }
-
-    componentDidMount() {
     }
 
     render() {
         let items = this.state.items;
 
         return (
-            <div className="lists-wrapper">
                 <ul>
                     {items.map(item => (
                         <li key={item.number} onClick={
                             (e) => {
                                 this.props.updateData(e.target.innerText);
-                                console.log(e.target.innerText);
-
                             }
                         }
                         >
@@ -34,8 +26,6 @@ class Lists extends Component {
                         </li>
                     ))}
                 </ul>
-                <ListItem/>
-            </div>
         );
     }
 }

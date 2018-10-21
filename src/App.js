@@ -3,6 +3,9 @@ import RegistrationForm from './RegistrationForm/RegistrationForm';
 import Header from './Header/Header'
 import Lists from './Lists/Lists'
 import './App.css';
+import ListItem from "./ListItem/ListItem";
+
+let liNumber;
 class App extends Component {
     constructor(props){
         super(props);
@@ -10,7 +13,10 @@ class App extends Component {
             email:'',
             password: '',
             showRegister: false,
-            isUserLogin: false
+            isUserLogin: false,
+            isLoad: false,
+            buttonValue: '',
+            flagLogin: false
         };
     }
 
@@ -21,29 +27,44 @@ class App extends Component {
             showRegister: showRegister,
             isUserLogin: isUserLogin
         });
-        console.log(this);
     };
 
-    ShowRegisterForm = (showFormRegistration)=>{
+    ShowRegisterForm = (showFormRegistration, value, loginFlag)=>{
         this.setState({
-            showRegister: showFormRegistration
-        })
+            showRegister: showFormRegistration,
+            buttonValue: value
+        });
     };
 
-    updateData = (value) => {
-        this.setState({ name: value })
+    NumberOfLi = (value) => {
+        liNumber = value;
+        this.setState({
+           isLoad:true
+        });
     };
 
 
   render() {
+
     return (
       <div className="App">
-          <Header ShowRegister={this.ShowRegisterForm}/>
+          <Header
+              ShowRegister={this.ShowRegisterForm}
+              isUserLogin={this.state.isUserLogin}
+          />
           { this.state.showRegister === true ?
               <RegistrationForm SubmitButton={this.handleSubmit}/>
               : ''
           }
-          <Lists updateData={this.updateData}/>
+          <div className="lists-wrapper">
+              <Lists updateData={this.NumberOfLi}/>
+              <ListItem
+                  numberOfLi={liNumber}
+                  isLogin={this.state.isUserLogin}
+                  showRegister={this.state.showRegister}
+                  valueButtonLogin={this.state.buttonValue.innerHTML}
+              />
+          </div>
       </div>
     );
   }

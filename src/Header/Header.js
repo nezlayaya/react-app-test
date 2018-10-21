@@ -4,21 +4,25 @@ class Header extends Component {
     constructor(props){
         super(props);
         this.state={
-            isToggleOn: true,
-            loginUser: false
+            isToggleOn: true
         };
         this.ShowRegisterForm = this.ShowRegisterForm.bind(this);
     }
 
     ShowRegisterForm(){
-        this.props.ShowRegister(this.state.isToggleOn);
+        let buttonValue = this.refs.loginButton;
+        this.setState({
+            isToggleOn: true
+        });
+        this.props.ShowRegister(this.state.isToggleOn, buttonValue);
+
     }
 
     render() {
         return (
             <header className='w3-container w3-teal'>
-                <button onClick={this.ShowRegisterForm} className='login w3-button w3-white'>
-                    {this.state.loginUser === false ?
+                <button onClick={this.ShowRegisterForm} className='login w3-button w3-white' ref="loginButton">
+                    {this.props.isUserLogin === false ?
                         'Login' : 'Logout'
                     }
                 </button>

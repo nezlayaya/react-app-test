@@ -36,3 +36,27 @@ ul li{
   align-items: center;
   border-radius: 50px;
 }
+
+.form-container{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hiddenPopap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009688ad;
+    color: #fff;
+    font-size: 30px;
+    flex-direction: column;
+}
+
+.hiddenPopap span{
+    text-decoration: underline;
+}

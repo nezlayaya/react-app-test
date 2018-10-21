@@ -54,7 +54,7 @@ class RegistrationForm extends Component {
                                onChange={this.passwordChange}
                         />
                     </div>
-                    <button>Submit</button>
+                    <button className='w3-btn w3-padding w3-teal w3-margin-top'>Submit</button>
                 </form>
             </div>
         );
