@@ -12,7 +12,6 @@ class ListItem extends Component {
 
     render() {
         let items = this.state.items;
-        console.log(this.props);
 
         return (
             <div className="list-wrapper">
@@ -23,12 +22,12 @@ class ListItem extends Component {
                                 <p>{item.title}</p>
                                 <div><img src={item.img} alt=""/></div>
                                 <p>{item.imgDescription}</p>
-                                {this.props.numberOfLi == item.number && this.props.isLogin === true && this.props.valueButtonLogin === 'Logout'?
+                                {this.props.numberOfLi == item.number && this.props.isLogin === true?
                                     <p className="hidden text">
                                         {item.hiddenInformation}
                                     </p> : ''
                                 }
-                                {this.state.hideEl === false && this.props.numberOfLi == item.number && this.props.isLogin === false && this.props.valueButtonLogin === 'Login' ||  this.props.numberOfLi == item.number && this.props.isLogin === false?
+                                {this.state.hideEl === false && this.props.numberOfLi == item.number && this.props.isLogin === false  ||  this.props.numberOfLi == item.number && this.props.isLogin === false?
                                     <div className='hiddenPopap' ref='hiddenPopup'><p>You Should Login</p>
                                         <span onClick={
                                             ()=>{

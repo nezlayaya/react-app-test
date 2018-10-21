@@ -60,3 +60,9 @@ ul li{
 .hiddenPopap span{
     text-decoration: underline;
 }
+
+.registration-wrapper button{
+    margin: 0 auto;
+    max-width: 200px;
+    display: inherit;
+}

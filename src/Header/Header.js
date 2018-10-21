@@ -15,16 +15,13 @@ class Header extends Component {
             isToggleOn: true
         });
         this.props.ShowRegister(this.state.isToggleOn, buttonValue);
-
     }
 
     render() {
         return (
             <header className='w3-container w3-teal'>
                 <button onClick={this.ShowRegisterForm} className='login w3-button w3-white' ref="loginButton">
-                    {this.props.isUserLogin === false ?
-                        'Login' : 'Logout'
-                    }
+                    Login
                 </button>
             </header>
         );

@@ -6,6 +6,7 @@ import './App.css';
 import ListItem from "./ListItem/ListItem";
 
 let liNumber;
+let buttonValue;
 class App extends Component {
     constructor(props){
         super(props);
@@ -29,7 +30,7 @@ class App extends Component {
         });
     };
 
-    ShowRegisterForm = (showFormRegistration, value, loginFlag)=>{
+    ShowRegisterForm = (showFormRegistration, value)=>{
         this.setState({
             showRegister: showFormRegistration,
             buttonValue: value
@@ -43,9 +44,7 @@ class App extends Component {
         });
     };
 
-
   render() {
-
     return (
       <div className="App">
           <Header
